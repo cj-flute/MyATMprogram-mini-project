@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ATM Machine Project</title>
+    <link rel="stylesheet" href="/mine/mstyle.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>USERS</th>
+                <th>PASSWORDS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John</td>
+                <td>1234</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Chike</td>
+                <td>2255</td>
+            </tr><tr>
+                <td>3</td>
+                <td>David</td>
+                <td>1111</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Michael</td>
+                <td>7755</td>
+            </tr>
+        </tbody>
+    </table>
+    <center>
+        <div id="bigBox">
+            <div class="content-box box">
+                <div class="login-interface flex-h-w box">
+                    <div class="login-screen ">
+                        <input type="password" placeholder="XXXX" id="password">
+                        <button id="send-btn">SEND</button>
+                        <div>
+                            <p id="wrong-pin" style="color: red;"></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- after login successful -->
+                <div class="content box">
+                    <div class="top-content-box box">
+                        <div class="top-box" id="tb1">
+                            <p><span class="atm-icon">💳</span></p>
+                            <p><span class="balance">$<span id="bal"></span></span></p>
+                        </div>
+                        <div class="top-box" id="tb2">
+                            <p><span class="atm-icon">🙍🏿‍♂️</span></p>
+                            <p><span class="balance" id="person">Michael</span></p>
+                        </div>
+                    </div>
+                    <!-- major content screen -->
+                    <div class="content-items">
+                        <!-- options -->
+                        <div class="option items" id="option">
+                            <div class="option-box left">
+                                <button class="option-box-btn">WITHDRAW</button>
+                                <button class="option-box-btn">TRANSFER</button>
+                                <button class="option-box-btn">RECHARGE</button>
+                            </div>
+                            <div class="option-box right">
+                                <button class="option-box-btn">ENQUIRY</button>
+                                <button class="option-box-btn">DEPOSIT</button>
+                                <button class="option-box-btn">CANCEL</button>
+                            </div>
+                        </div>
+                        <!-- withdraw -->
+                        <div class="withdraw-div items">
+                            <div class="withdraw">
+                                <div>
+                                    <h2>WITHDRAW</h2>
+                                </div>
+                                <div class="input-div inputs">
+                                    <h5>AMOUNT</h5>
+                                    <input type="text" placeholder="0.00" id="cash">
+                                </div>
+                                <div class="input-div send-cancel-btn">
+                                    <button class="btn" id="withdraw-send-btn">SEND</button>
+                                    <button class="btn cancel-btn" id="withdraw-cancel-btn">CANCEL</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- transfer -->
+                        <div class="transfer-div item">
+                            <div class="transfer" id="slide1">
+                                <div class="input-div inputs">
+                                    <h2>INPUT BANK</h2>
+                                    <input type="text" id="bank">
+                                </div>
+                                <div class="input-div send-cancel-btn">
+                                    <button class="btn">SEND</button>
+                                    <button class="btn cancel-btn">CANCEL</button>
+                                </div>
+                            </div>
+                            <div class="transfer" id="slide2">
+                                <div class="confirmation">
+                                    <h3>TRANSFER</h3>
+                                    <div class="confirmation-input">
+                                        <label><h5>ACCTOUNT NO:</h5></label>
+                                        <input type="text" id="acct-no"><br>
+                                        <label><h5>AMOUNT:</h5></label>
+                                        <input type="text" id="amount"><br>
+                                        <label id="bnk"><h5>BANK:</h5></label>
+                                        <em id="bnk-name">CJ BANK</em>
+                                    </div>
+                                </div>
+                                <div class="input-div send-cancel-btn">
+                                    <button class="btn" id="bnk-send-btn2">SEND</button>
+                                    <button class="btn cancel-btn">CANCEL</button>
+                                </div>
+                            </div>
+                            <div class="transfer confirm" id="slide3">
+                                <div class="confirmation labels">
+                                    <label ><h5>ACOUNT NO:</h5></label>
+                                    <em id="bnkAcctNo">1000000001</em>
+                                    <label><h5>BANK:</h5></label>
+                                    <em id="bnkname">CJ BANK</em>
+                                    <label><h5>AMOUNT:</h5></label>
+                                    <em id="bnk-amt">0.00</em>
+                                </div>
+                                <div class="input-div send-cancel-btn">
+                                    <button class="btn">SEND</button>
+                                    <button class="btn cancel-btn" >CANCEL</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- recharge -->
+                        <div class="recharge-div items">
+
+                        </div>
+                        <!-- enquiry -->
+                        <div class="enquiry-div items">
+                            <div class="deposit">
+                                <div>
+                                    <h2>ENQUIRY</h2>
+                                </div>
+                                <div class="input-div inputs">
+                                    <h3>ACOUNT BALANCE</h3><br><br>
+                                    <em id="acct-bal" style="font-size: 30px;">0</em>
+                                </div>
+                                <div class="input-div send-cancel-btn">
+                                    <!-- <button class="btn" id="deposit-send-btn">SEND</button> -->
+                                    <button class="btn cancel-btn" id="enquiry-back">BACK</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- deposit -->
+                        <div class="deposit-div items">
+                            <div class="deposit">
+                                <div>
+                                    <h2>DEPOSIT</h2>
+                                </div>
+                                <div class="input-div inputs">
+                                    <h5>AMOUNT</h5>
+                                    <input type="text" placeholder="0.00" id="depo-cash">
+                                </div>
+                                <div class="input-div send-cancel-btn">
+                                    <button class="btn" id="deposit-send-btn">SEND</button>
+                                    <button class="btn cancel-btn" id="depo-back">BACK</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- cancel -->
+                        <div class="cancel-div items"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- register user -->
+        <div class="register-div">
+            <div class="register">
+                <div>
+                    <h2>REGISTRATION</h2>
+                </div>
+                <div class="input-div reg-inputs">
+                    <input type="text" id="user-name" placeholder="User Name">
+                    <input type="password" placeholder="PASSWORD" id="new-password">
+                    <input type="password" placeholder="RE-TYPE PASSWORD" id="retype-new-password">
+                </div>
+                <div class="input-div send-cancel-btn" style="height: 20%;">
+                    <button class="btn" id="register-send-btn">SEND</button>
+                    <button class="btn cancel-btn" id="reg-back">BACK</button>
+                </div>
+            </div>
+        </div>
+        <div class="reg-div">
+            <h5>REGISTER</h5>
+            <button id="reg">click</button>
+        </div>
+    </center>
+    <div class="modal">
+        <div class="successful">
+            <div>
+                <img id="image" src="/mine/good symbol.png" alt="good" width="50px" height="50px">
+            </div>
+            <div class="message">
+                <h4 id="mess">SUCCESSFUL</h4>
+            </div>
+            <div class="OkBtn">
+                <button id="ok-btn" style="width: 100px;">OK</button>
+            </div>
+        </div>
+    </div>
+    <script src="/mine/mapp.js"></script>
+</body>
+</html>
